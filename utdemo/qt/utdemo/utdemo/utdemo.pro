@@ -13,8 +13,8 @@ TEMPLATE = app
 #remove -fpermissive warning/error
 #QMAKE_CXXFLAGS += -fpermissive -shared -fpack-struct=1 -fPIC  -g
 #QMAKE_CFLAGS += -fpermissive -shared -fpack-struct=1 -fPIC  -g
-QMAKE_CXXFLAGS += -fpermissive
-QMAKE_CFLAGS += -fpermissive
+QMAKE_CXXFLAGS += -fpermissive -fprofile-arcs -ftest-coverage
+QMAKE_CFLAGS += -fpermissive -fprofile-arcs -ftest-coverage
 DEFINES += UT
 
 INCLUDEPATH += \
@@ -56,7 +56,8 @@ LIBS += -L../../../src/gtest/lib \
 -lgtest \
 -lgmock \
 -ldl \
--lpthread
+-lpthread \
+-lgcov
 
 
 
